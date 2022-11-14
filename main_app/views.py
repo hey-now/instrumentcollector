@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 instruments = [
-    {'type': 'Guitar', 'brand': 'Schecter', 'model': 'Diamond Series C-1', 'color': 'Sunburst', 'manufacture_date': '2002'},
-    {'type': 'Guitar', 'brand': 'Martin', 'model': 'Road Series SC-10E', 'color': 'Satin Spruce', 'manufacture_date': '2022'},
+    {'nickname': 'Ole Faithful', 'type': 'Guitar', 'brand': 'Schecter', 'model': 'Diamond Series C-1', 'color': 'Sunburst', 'manufactured_date': '2002'},
+    {'nickname': 'Showstopper', 'type': 'Guitar', 'brand': 'Martin', 'model': 'Road Series SC-10E', 'color': 'Satin Spruce', 'manufactured_date': '2022'},
 ]
 
 # Create your views here.
