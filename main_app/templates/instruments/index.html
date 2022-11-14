@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Instrument List</h1>
+
+{% for instrument in instruments %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ instrument.type }}</span>
+            <p>Brand: {{ instrument.brand }}</p>
+            <p>Model: {{ instrument.model }}</p>
+            <p>Color: {{ instrument.color }}</p>
+            <p>Manufacture Date: {{ instrument.manufacture_date }}</p>
+        </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
