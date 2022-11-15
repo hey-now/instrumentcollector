@@ -12,10 +12,6 @@ footer.page-footer {
 padding-top: 0;
 text-align: right;
 }
-.card {
-    width: 100px;
-    height: 100px;
-}
 section {
     display: inline-flex;
     padding: 10px;

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ instrument.nickname}}'s Details</h1>
+
+<section id="index">
+    <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{ instrument.imgURL }}">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ instrument.nickname }}<i class="material-symbols-outlined right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title">{{ instrument.nickname }}<i class="material-symbols-outlined right">close </i></span>
+                <p>Type: {{ instrument.type }}</p>
+                <p>Brand: {{ instrument.brand }}</p>
+                <p>Model: {{ instrument.model }}</p>
+                <p>Color: {{ instrument.color }}</p>
+                <p>Manufactured Date: {{ instrument.manf_date }}</p>
+            </div>
+    </div>
+    </section>
+
+{% endblock %}

@@ -9,3 +9,6 @@ def about(request):
 def instruments_index(request):
     instruments = Instrument.objects.all()
     return render(request, 'instruments/index.html', { 'instruments': instruments })
+def instruments_detail(request, instrument_id):
+    instrument = Instrument.objects.get(id=instrument_id)
+    return render(request, 'instruments/detail.html', { 'instrument': instrument })
