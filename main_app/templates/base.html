@@ -9,11 +9,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instrument Collector</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
     <header class="navbar-fixed">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Guitars</a></li>
+            <li><a href="#!">Keyboards</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Brass</a></li>
+        </ul>
         <nav>
             <div class="nav-wrapper">
                 <ul>
@@ -21,7 +31,7 @@
                 </ul>
                 <ul class="right">
                     <li><a href="/about">About</a></li>
-                    <li><a href="/instruments">View All My Instruments</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<span class="material-symbols-outlined">menu</span></a></li>
                 </ul>
             </div>
         </nav>
@@ -36,3 +46,7 @@
 </body>
 
 </html>
+
+<script>
+    $( document ).ready($(".dropdown-trigger").dropdown())
+</script>
