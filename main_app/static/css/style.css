@@ -13,8 +13,8 @@ padding-top: 0;
 text-align: right;
 }
 .card {
-    width: 400px;
-    height: auto;
+    width: 100px;
+    height: 100px;
 }
 section {
     display: inline-flex;
