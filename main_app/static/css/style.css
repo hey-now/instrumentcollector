@@ -14,6 +14,8 @@ text-align: right;
 }
 section {
     display: inline-flex;
-    padding: 10px;
+    padding-left: 20px;
 }
-
+.brand-logo {
+    margin-left: 10px;
+}

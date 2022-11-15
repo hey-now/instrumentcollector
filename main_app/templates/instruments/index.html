@@ -6,15 +6,15 @@
 {% for instrument in instruments %}
 
 <section id="index">
-    <div class="card">
+    <div class="card z-depth-5">
         <div class="card-image waves-effect waves-block waves-light">
                 <a href="{% url 'detail' instrument.id %}">
                 <img width="400px" height="600px" class="activator" src="{{ instrument.imgURL }}">
             </a>
         </div>
-        <div class="card-content">
+        <div class="card-content deep-purple lighten-4">
             <span class="card-title activator grey-text text-darken-4">{{ instrument.nickname }}<i class="material-symbols-outlined right">more_vert</i></span>
-            <p><a href="{% url 'detail' instrument.id %}">Details Page</a></p>
+            <p><a class="waves-effect waves-light btn" href="{% url 'detail' instrument.id %}">Details Page</a></p>
         </div>
         <div class="card-reveal">
             <span class="card-title">{{ instrument.nickname }}<i class="material-symbols-outlined right">close </i></span>
