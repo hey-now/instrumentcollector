@@ -15,32 +15,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
     <header class="navbar-fixed">
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Guitars</a></li>
-            <li><a href="#!">Keyboards</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">Brass</a></li>
-        </ul>
         <nav>
             <div class="nav-wrapper indigo lighten-3 z-depth-3">
                 <ul>
                     <li><a href="{% url 'home' %}" class="left brand-logo"> Instrument Collector</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="{% url 'about' %}"">About</a></li>
-                    <li><a href="{% url 'instruments_create' %}"">Add an Instrument</a></li>
-                    <li><a class="dropdown-trigger" href="{% url 'index' %}" data-target="dropdown1">All My Instruments<span class="material-symbols-outlined">menu</span></a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'instruments_create' %}">Add an Instrument</a></li>
+                    <li><a class="dropdown-trigger btn" href="#" data-target="dropdown1">All My Instruments<span class="material-symbols-outlined">menu</span></a></li>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="#!">Guitars</a></li>
+                        <li><a href="#!">Keyboards</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">Brass</a></li>
+                    </ul>
                 </ul>
             </div>
         </nav>
     </header>
     <main class="container">
         <div class="fixed-action-btn">
-            <br><a class="btn-floating btn-large waves-effect waves-light right indigo"><i class="material-symbols-outlined">add</i></a>
+            <br><a href="{% url 'instruments_create' %}" class="btn-floating btn-large waves-effect waves-light right indigo"><i class="material-symbols-outlined">add</i></a>
         </div>
         {% block content %}
         {% endblock %}
@@ -53,5 +54,8 @@
 </html>
 
 <script>
-    $( document ).ready($(".dropdown-trigger").dropdown())
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems, options);
+    });
 </script>
