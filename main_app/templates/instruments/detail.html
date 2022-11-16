@@ -2,26 +2,45 @@
 {% block content %}
 
 <h1>{{ instrument.nickname}}'s Details</h1>
-
-    <div class="card z-depth-5">
-        <div class="card-image waves-effect waves-block waves-light">
-                <img width="400px" height="600px" class="activator" src="{{ instrument.imgURL }}">
+    <div class="row">
+        <div class="col s6">
+            <div class="card z-depth-5">
+                <div class="card-image waves-effect waves-block waves-light">
+                        <img width="400px" height="600px" class="activator" src="{{ instrument.imgURL }}">
+                </div>
+                <div class="card-content deep-purple lighten-4">
+                    <span class="card-title activator grey-text text-darken-4">{{ instrument.nickname }}<i class="material-symbols-outlined right">more_vert</i></span>
+                </div>
+                <div class="card-reveal ">
+                    <span class="card-title">{{ instrument.nickname }}<i class="material-symbols-outlined right">close </i></span>
+                    <p>Type: {{ instrument.type }}</p>
+                    <p>Brand: {{ instrument.brand }}</p>
+                    <p>Model: {{ instrument.model }}</p>
+                    <p>Color: {{ instrument.color }}</p>
+                    <p>Manufactured Date: {{ instrument.manf_date }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'instruments_update' instrument.id %}">Edit</a>
+                    <a href="{% url 'instruments_delete' instrument.id %}">Delete</a>
+                </div>
+            </div>
         </div>
-        <div class="card-content deep-purple lighten-4">
-            <span class="card-title activator grey-text text-darken-4">{{ instrument.nickname }}<i class="material-symbols-outlined right">more_vert</i></span>
+              <div class="col s6">
+                <table class="striped">
+                  <thead>
+                    <tr><th>Date</th><th>Played</th></tr>
+                  </thead>
+                  <tbody>
+                    {% for played in instrument.played_set.all %}
+                      <tr>
+                        <td>{{played.date}}</td>
+                        <td>{{played.get_played_display}}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
         </div>
-        <div class="card-reveal ">
-            <span class="card-title">{{ instrument.nickname }}<i class="material-symbols-outlined right">close </i></span>
-            <p>Type: {{ instrument.type }}</p>
-            <p>Brand: {{ instrument.brand }}</p>
-            <p>Model: {{ instrument.model }}</p>
-            <p>Color: {{ instrument.color }}</p>
-            <p>Manufactured Date: {{ instrument.manf_date }}</p>
-        </div>
-        <div class="card-action">
-            <a href="{% url 'instruments_update' instrument.id %}">Edit</a>
-            <a href="{% url 'instruments_delete' instrument.id %}">Delete</a>
-          </div>
     </div>
     </section>
 
