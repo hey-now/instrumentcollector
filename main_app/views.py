@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Instrument
 
 # Create your views here.
@@ -12,3 +13,7 @@ def instruments_index(request):
 def instruments_detail(request, instrument_id):
     instrument = Instrument.objects.get(id=instrument_id)
     return render(request, 'instruments/detail.html', { 'instrument': instrument })
+
+class InstrumentCreate(CreateView):
+    model = Instrument
+    fields = '__all__'
