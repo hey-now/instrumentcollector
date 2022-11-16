@@ -18,6 +18,10 @@
             <p>Color: {{ instrument.color }}</p>
             <p>Manufactured Date: {{ instrument.manf_date }}</p>
         </div>
+        <div class="card-action">
+            <a href="{% url 'instruments_update' instrument.id %}">Edit</a>
+            <a href="{% url 'instruments_delete' instrument.id %}">Delete</a>
+          </div>
     </div>
     </section>
 

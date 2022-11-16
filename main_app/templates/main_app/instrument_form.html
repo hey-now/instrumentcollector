@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% if object %}
+    <h1>Edit <span>{{ object.nickname }}</span></h1>
+{% else %}
   <h1>Add Instrument</h1>
+{% endif %}
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
   <form action="" method="POST">
     <!-- Django requires the following for security purposes -->
@@ -11,5 +16,6 @@
       {{ form.as_table }}
     </table>
     <input type="submit" value="Submit!" class="btn">
+    <a href="{% url 'detail' instrument.id %}">Cancel</a>
   </form>
 {% endblock %}

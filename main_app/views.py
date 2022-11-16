@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Instrument
 
 # Create your views here.
@@ -17,3 +17,11 @@ def instruments_detail(request, instrument_id):
 class InstrumentCreate(CreateView):
     model = Instrument
     fields = '__all__'
+
+class InstrumentUpdate(UpdateView):
+    model = Instrument
+    fields = ['type', 'brand', 'model', 'color', 'manf_date']
+
+class InstrumentDelete(DeleteView):
+    model = Instrument
+    success_url = '/instruments'
