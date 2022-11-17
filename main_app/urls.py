@@ -10,4 +10,11 @@ urlpatterns = [
     path('instruments/<int:pk>/update/', views.InstrumentUpdate.as_view(), name='instruments_update'),
     path('instruments/<int:pk>/delete/', views.InstrumentDelete.as_view(), name='instruments_delete'),
     path('instruments/<int:instrument_id>/add_played/', views.add_played, name='add_played'),
+    path('instruments/<int:instrument_id>/assoc_accessory/<int:accessory_id>/', views.assoc_accessory, name='assoc_accessory'),
+    path('instruments/<int:instrument_id>/unassoc_accessory/<int:accessory_id>/', views.unassoc_accessory, name='unassoc_accessory'),
+    path('accessories/', views.AccessoryList.as_view(), name='accessories_index'),
+    path('accessories/<int:pk>/', views.AccessoryDetail.as_view(), name='accessories_detail'),
+    path('accessories/create/', views.AccessoryCreate.as_view(), name='accessories_create'),
+    path('accessories/<int:pk>/update/', views.AccessoryUpdate.as_view(), name='accessories_update'),
+    path('accessories/<int:pk>/delete/', views.AccessoryDelete.as_view(), name='accessories_delete'),
 ]
