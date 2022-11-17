@@ -4,8 +4,11 @@ from django.urls import reverse
 # Create your models here.
 
 PLAYED = (
-    ('N', 'No'),
-    ('Y', 'Yes')
+    ('A', '15 mins'),
+    ('B', '30 mins'),
+    ('C', '1 hour'),
+    ('D', '1.5 hours'),
+    ('E', '2 hours')
 )
 
 class Instrument(models.Model):

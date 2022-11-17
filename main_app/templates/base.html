@@ -28,7 +28,7 @@
                 <ul class="right">
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'instruments_create' %}">Add an Instrument</a></li>
-                    <li><a class="dropdown-trigger btn" href="#" data-target="dropdown1">All My Instruments<span class="material-symbols-outlined">menu</span></a></li>
+                    <li><a class="dropdown-trigger btn" href="{% url 'index' %}" data-target="dropdown1">All My Instruments<span class="material-symbols-outlined">menu</span></a></li>
                     <ul id="dropdown1" class="dropdown-content">
                         <li><a href="#!">Guitars</a></li>
                         <li><a href="#!">Keyboards</a></li>
@@ -54,8 +54,6 @@
 </html>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.dropdown-trigger');
-        var instances = M.Dropdown.init(elems, options);
-    });
+const dropDownEl = document.getElementsByClassName('dropdown-trigger');
+M.Dropdown.init(dropDownEl)
 </script>
