@@ -31,6 +31,12 @@
             {{ played_form.as_p }}
             <input type="submit" class="btn" value="Add Session">
         </form>
+        <br>
+        {% if instrument.played_for_today %}
+          <div class="card-panel teal-text center-align">{{instrument.nickname}} has been rocked today!</div>
+        {% else %}
+          <div class="card-panel red-text center-align">{{instrument.nickname}} needs some TLC today!</div>
+        {% endif %}
     <table class="striped">
         <thead>
         <tr><th>Date</th><th>Played</th></tr>

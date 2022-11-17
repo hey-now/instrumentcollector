@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 
 PLAYED = (
     ('A', '15 mins'),
@@ -34,6 +35,9 @@ class Instrument(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'instrument_id': self.id})
+
+    def played_for_today(self):
+        return self.played_set.filter(date=date.today())
 
 class Played(models.Model):
     date = models.DateField('Played on')
