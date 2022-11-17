@@ -35,11 +35,11 @@ def add_played(request, instrument_id):
 
 class InstrumentCreate(CreateView):
     model = Instrument
-    fields = ['nickname', 'type', 'brand', 'model', 'color', 'manf_date']
+    fields = ['img_Url', 'nickname', 'type', 'brand', 'model', 'color', 'manf_date']
 
 class InstrumentUpdate(UpdateView):
     model = Instrument
-    fields = ['type', 'brand', 'model', 'color', 'manf_date']
+    fields = ['img_Url', 'type', 'brand', 'model', 'color', 'manf_date']
 
 class InstrumentDelete(DeleteView):
     model = Instrument

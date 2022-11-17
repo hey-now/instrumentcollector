@@ -22,6 +22,7 @@ class Accessory(models.Model):
         return reverse('accessories_detail', kwargs={'pk': self.id})
 
 class Instrument(models.Model):
+    img_Url = models.CharField(max_length=50)
     nickname = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
