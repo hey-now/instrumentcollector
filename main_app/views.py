@@ -15,6 +15,14 @@ def instruments_index(request):
     instruments = Instrument.objects.all()
     return render(request, 'instruments/index.html', { 'instruments': instruments })
 
+def instruments_guitars(request):
+    instruments = Instrument.objects.filter(type='Guitar')
+    return render(request, 'instruments/guitars.html', { 'instruments': instruments })
+
+def instruments_keyboards(request):
+    instruments = Instrument.objects.filter(type='Keyboard')
+    return render(request, 'instruments/guitars.html', { 'instruments': instruments })
+
 def instruments_detail(request, instrument_id):
     instrument = Instrument.objects.get(id=instrument_id)
     id_list = instrument.accessories.all().values_list('id')
