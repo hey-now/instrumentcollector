@@ -38,7 +38,7 @@ class Instrument(models.Model):
         return reverse('detail', kwargs={'instrument_id': self.id})
 
     def played_for_today(self):
-        return self.played_set.filter(date=date.today()) == date.today()
+        return self.played_set.filter(date=date.today())
 
 class Played(models.Model):
     date = models.DateField('Played on')
