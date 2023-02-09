@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'instrument-collector.wsgi.application'
+WSGI_APPLICATION = 'instrumentcollector.wsgi.application'
 
 
 # Database

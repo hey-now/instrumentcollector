@@ -1,1 +1,1 @@
-web: gunicorn instrument-collector.wsgi
+web: gunicorn instrumentcollector23.wsgi
