@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'instrumentcollector.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'instrumentcollector',
+        'NAME': 'intrumentcollector',
     }
 }
 
