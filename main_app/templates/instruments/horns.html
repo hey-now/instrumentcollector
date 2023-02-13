@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Instrument List</h1>
 
 {% for instrument in instruments %}
 
-<section id="index">
-    <div class="card z-depth-5">
+<section id="index" style="padding-top: 2rem;">
+    <div style="max-width: 400px;" class="card z-depth-5">
         <div class="card-image waves-effect waves-block waves-light">
-                <a href="{% url 'detail' instrument.id %}">
-                <img width="400px" height="600px" class="activator" src="{{ instrument.img_Url }}">
+            <a href="{% url 'detail' instrument.id %}">
+                <img style="height: 400px; width: 200px" src="{{ instrument.img_Url }}">
             </a>
         </div>
         <div class="card-content deep-purple lighten-4">
